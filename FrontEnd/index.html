@@ -13,7 +13,7 @@
   <header class="hero">
     <div>
       <p class="eyebrow">Projeto Fullstack Pizzaria</p>
-      <h1>CodePizza</h1>
+      <h1>🍕 CodePizza 🍕</h1>
       <p class="subtitle">
         Sistema para gerenciar clientes, pizzas, pedidos e desenvolvedores de sabor da CodePizza.
       </p>
@@ -28,146 +28,48 @@
     </a>
   </header>
 
-  <section class="card auth-grid">
+<!-- Tela de Login -->
+<div id="login-container" class="login-card">
+  <h2>Entrar</h2>
+  <form onsubmit="validarLogin(event)">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" required>
 
-    <form id="register-form" class="stack">
-      <h2>Criar usuário</h2>
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" required>
 
-      <label>
-        Nome
-        <input
-          name="name"
-          placeholder="Administrador"
-          required
-        >
-      </label>
+    <button type="submit">Login</button>
+    <button type="button" class="secondary">Criar Conta</button>
+  </form>
+</div>
 
-      <label>
-        E-mail
-        <input
-          name="email"
-          type="email"
-          placeholder="admin@pizzaria.com"
-          required
-        >
-      </label>
 
-      <label>
-        Senha
-        <input
-          name="password"
-          type="password"
-          placeholder="123456"
-          required
-        >
-      </label>
+<!-- Tela de Cadastro -->
+<div id="register-container" style="display:none;">
+  <form id="register-form" class="stack">
+    <h2>Criar usuário</h2>
+    <label>Nome <input type="text" required></label>
+    <label>E-mail <input type="email" required></label>
+    <label>Senha <input type="password" required></label>
+    <button type="submit">Cadastrar</button>
+    <button type="button" onclick="mostrarLogin()">Cancelar</button>
+  </form>
+</div>
 
-      <button type="submit">
-        Cadastrar
-      </button>
-    </form>
+<!-- Tela Principal (Pedidos) -->
+<div id="sistema-container" style="display:none;">
+  <h2>Novo Pedido</h2>
+  <label>Cliente <input type="text"></label>
+  <label>Pizza <input type="text"></label>
+  <label>Status <input type="text"></label>
+  <button>Salvar</button>
+  <button>Cancelar</button>
+</div>
 
-    <form id="login-form" class="stack">
-      <h2>Entrar</h2>
-
-      <label>
-        E-mail
-        <input
-          name="email"
-          type="email"
-          placeholder="admin@pizzaria.com"
-          required
-        >
-      </label>
-
-      <label>
-        Senha
-        <input
-          name="password"
-          type="password"
-          placeholder="123456"
-          required
-        >
-      </label>
-
-      <button type="submit">
-        Login
-      </button>
-    </form>
-
-  </section>
-
-  <section class="card status-card">
-    <div>
-      <strong>Status da sessão:</strong>
-      <span id="session-status">
-        não autenticado
-      </span>
-    </div>
-
-    <div id="current-user"></div>
-
-    <div id="feedback" class="feedback"></div>
-  </section>
-
-  <section class="card" id="app-section">
-
-    <div class="toolbar">
-
-      <div id="entity-tabs" class="tabs"></div>
-
-      <div class="toolbar-actions">
-        <button id="refresh-button">
-          Atualizar Lista
-        </button>
-
-        <button
-          id="logout-button"
-          class="secondary"
-        >
-          Sair
-        </button>
-      </div>
-
-    </div>
-
-    <div class="content-grid">
-
-      <form id="entity-form" class="stack">
-
-        <h2 id="form-title">
-          Novo Registro
-        </h2>
-
-        <div id="form-fields"></div>
-
-        <div class="form-actions">
-          <button type="submit">
-            Salvar
-          </button>
-
-          <button
-            id="cancel-edit"
-            type="button"
-            class="secondary"
-          >
-            Cancelar
-          </button>
-        </div>
-
-      </form>
-
-      <div class="table-wrapper">
-
-        <table>
-
-          <thead>
-            <tr id="table-head"></tr>
-          </thead>
-
-          <tbody id="table-body"></tbody>
-
-        </table>
+<div id="sistema-container" style="display:none;">
+  <h2>Novo Pedido</h2>
+  <!-- conteúdo do sistema -->
+</div>
 
       </div>
 

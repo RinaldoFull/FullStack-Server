@@ -1,30 +1,59 @@
 :root {
-  color-scheme: light;
-  font-family: "Inter", "Segoe UI", sans-serif;
-  line-height: 1.6;
-  color: #3d1f00;
-  background: #f8efe6;
+  color-scheme: light; /* Define esquema de cores claro (para suportar dark/light mode) (Rinaldo Pereira) */
+  font-family: "Inter", "Segoe UI", sans-serif; /* Fonte padrão da página */
+  line-height: 1.6; /* Altura da linha para melhor legibilidade */
+  color: #3d1f00; /* Cor padrão do texto */
+  background: #f8efe6; /* Cor de fundo padrão */
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Inclui padding e borda no cálculo de largura/altura */
 }
 
+/* Centralização da tela de login (Rinaldo Pereira)*/
 body {
   margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(214, 40, 40, 0.15), transparent 26%),
-    radial-gradient(circle at bottom right, rgba(247, 127, 0, 0.14), transparent 22%),
-    linear-gradient(180deg, #fff8f0 0%, #f3e3d9 100%);
+  min-height: 100vh;           
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  background: #f8efe6;         
 }
 
+.login-card {
+  width: 100%;
+  max-width: 360px;           
+  padding: 2rem;
+  background: #fff;            
+  border-radius: 16px;         
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+}
+
+/* Centralização do banner hihihihi (Rinaldo Pereira)*/
+.hero {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
+  text-align: center;       
+  margin: 0 auto;           
+  max-width: 800px;         
+}
+
+/* Titulo do pizzaaaaaaa*/
+.hero h1 {
+  text-align: center;
+  width: 100%;
+}
+
+/* Centralização */
 .page {
   width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 3rem 0 4rem;
 }
 
+/* Bordas e Sombras*/
 .hero,
 .card {
   background: rgba(255, 255, 255, 0.96);
@@ -34,6 +63,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
+/* Espaço entre os elementos */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -43,12 +73,14 @@ body {
   border-left: 8px solid #d62828;
 }
 
+/* Espaçamento do Título*/
 .hero h1 {
   margin: 0.2rem 0 1rem;
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   letter-spacing: -0.04em;
 }
 
+/* Letras,espaçamentos e texto em vermelho */
 .eyebrow {
   margin: 0 0 8px;
   color: #d62828;
@@ -58,6 +90,7 @@ body {
   font-size: 0.75rem;
 }
 
+/* Limite de largura */
 .subtitle {
   margin: 0;
   max-width: 720px;
@@ -65,6 +98,7 @@ body {
   font-size: 1rem;
 }
 
+/* Espaçamento dos Botões */
 .docs-link {
   align-self: center;
   padding: 0.9rem 1.5rem;
@@ -79,10 +113,12 @@ body {
   box-shadow: 0 16px 30px rgba(214, 40, 40, 0.18);
 }
 
+
 .docs-link:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px); /* Levanta levemente ao passar o mouse (Rinaldo Pereira)*/
 }
 
+/* Grids para organizar conteúdo (Rinaldo Pereira) */
 .auth-grid,
 .content-grid {
   display: grid;
@@ -90,7 +126,8 @@ body {
 }
 
 .auth-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas (Rinaldo Pereira)*/
+  margin-bottom: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -121,11 +158,13 @@ label {
   font-weight: 600;
 }
 
+
+/* Input e Botões (Rinaldo Pereira)*/
 input,
 select,
 textarea,
 button {
-  font: inherit;
+  font: inherit; /* Herdan Fonte */
 }
 
 input,
@@ -172,6 +211,7 @@ button.secondary:hover {
   background: #d96c00;
 }
 
+/* Toolbar e tabs (Rinaldo Pereira)*/
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -211,6 +251,7 @@ button.secondary:hover {
   border-color: transparent;
 }
 
+/* Grid de Conteudo (Rinaldo Pereira)*/
 .content-grid {
   grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
 }
@@ -222,6 +263,8 @@ button.secondary:hover {
   flex-wrap: wrap;
 }
 
+
+/* Tabelas (Rinaldo Pereira)*/
 .table-wrapper {
   overflow: auto;
 }
@@ -253,6 +296,7 @@ tbody tr:hover {
   transform: translateX(2px);
 }
 
+/* Responsividade (Rinaldo Pereira) */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
