@@ -7,79 +7,94 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div class="page">
 
-<div class="page">
-
-  <header class="hero">
-    <div>
-      <p class="eyebrow">Projeto Fullstack Pizzaria</p>
-      <h1>🍕 CodePizza 🍕</h1>
-      <p class="subtitle">
-        Sistema para gerenciar clientes, pizzas, pedidos e desenvolvedores de sabor da CodePizza.
-      </p>
-    </div>
-
-    <a
-      class="docs-link"
-      href="http://localhost:3000/api/docs"
-      target="_blank"
-    >
-      Abrir Swagger
-    </a>
-  </header>
-
-<!-- Tela de Login -->
-<div id="login-container" class="login-card">
-  <h2>Entrar</h2>
-  <form onsubmit="validarLogin(event)">
-    <label for="email">E-mail</label>
-    <input type="email" id="email" required>
-
-    <label for="senha">Senha</label>
-    <input type="password" id="senha" required>
-
-    <button type="submit">Login</button>
-    <button type="button" class="secondary">Criar Conta</button>
-  </form>
-</div>
-
-
-<!-- Tela de Cadastro -->
-<div id="register-container" style="display:none;">
-  <form id="register-form" class="stack">
-    <h2>Criar usuário</h2>
-    <label>Nome <input type="text" required></label>
-    <label>E-mail <input type="email" required></label>
-    <label>Senha <input type="password" required></label>
-    <button type="submit">Cadastrar</button>
-    <button type="button" onclick="mostrarLogin()">Cancelar</button>
-  </form>
-</div>
-
-<!-- Tela Principal (Pedidos) -->
-<div id="sistema-container" style="display:none;">
-  <h2>Novo Pedido</h2>
-  <label>Cliente <input type="text"></label>
-  <label>Pizza <input type="text"></label>
-  <label>Status <input type="text"></label>
-  <button>Salvar</button>
-  <button>Cancelar</button>
-</div>
-
-<div id="sistema-container" style="display:none;">
-  <h2>Novo Pedido</h2>
-  <!-- conteúdo do sistema -->
-</div>
-
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Projeto Fullstack Pizzaria</p>
+        <h1>CodePizza</h1>
+        <p class="subtitle">
+          Sistema para gerenciar clientes, pizzas, pedidos e desenvolvedores de sabor da CodePizza.
+        </p>
       </div>
 
+      <a
+        class="docs-link"
+        href="http://localhost:3000/api/docs"
+        target="_blank"
+      >
+        Abrir Swagger
+      </a>
+    </header>
+
+    <section class="card status-card">
+      <div>
+        <strong>Horário de Funcionamento:</strong>
+        <span id="session-status">
+          Domingo a Domingo,Funcionamos das 11h às 23h. Possuímos um rodízio diário de pizzas das 18h às 22h.
+        </span>
+      </div>
+
+      <div id="current-user"></div>
+      <div id="feedback" class="feedback"></div>
+    </section>
+
+    <!-- Tela de Pedidos -->
+    <section class="card" id="app-section">
+      <div class="toolbar">
+        <div id="entity-tabs" class="tabs"></div>
+
+        <div class="toolbar-actions">
+          <button id="refresh-button">
+            Atualizar Lista
+          </button>
+            <button
+              id="cancel-edit"
+              type="button"
+              class="secondary"
+            >
+              Edição
+            </button>  
+
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <form id="entity-form" class="stack">
+          <h2 id="form-title">
+            Novo Registro
+          </h2>
+
+          <div id="form-fields"></div>
+
+          <div class="form-actions">
+            <button type="submit">
+              Salvar
+            </button>
+
+          </div>
+        </form>
+
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Nome</th><th>Telefone</th><th>Endereço</th></tr></thead>
+        <tbody id="tbody-func"></tbody>
+      </table>
     </div>
 
-  </section>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr id="table-head"></tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-</div>
+  </div>
 
-<script src="./app.js"></script>
-
+  <script src="./app.js"></script>
 </body>
 </html>
